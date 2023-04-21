@@ -28,7 +28,7 @@ namespace perlinNoise {
     * Generate 1D Noise
     * @returns Value between 0.0 and 1.0
     */
-    //% block="1D Noise $x"
+    //% block="1D Noise in $x coordinate"
     //% weight=100
     export function noise1d(x: number): number {
         let XF = Math.floor(x) & 0xff;
@@ -42,7 +42,7 @@ namespace perlinNoise {
     * Generate 2D Noise
     * @returns Value between 0.0 and 1.0
     */
-    //% block="2D Noise $x $y"
+    //% block="2D Noise in $x and $y coordinates"
     //% weight=90
     export function noise2d(x: number, y: number): number {
         let XF = Math.floor(x) & 0xff;
@@ -63,9 +63,8 @@ namespace perlinNoise {
 
     /**
     * Generate 1D Perlin noise
-    * @returns Value between 0.0 and 1.0
     */
-    //% block="1D Perlin Noise|$x|amplitude $amplitude|frequency $frequency|octaves $octaves|persistence $persistence|lacunarity $lacunarity"
+    //% block="1D Perlin Noise|in $x|with amplitude $amplitude|frequency $frequency|octaves $octaves|persistence $persistence|lacunarity $lacunarity"
     //% weight=80
     export function fbm1d(x: number, amplitude: number, frequency: number, octaves: number, persistence: number, lacunarity: number): number {
         let value = 0;
@@ -82,9 +81,8 @@ namespace perlinNoise {
 
     /**
     * Generate 2D Perlin noise
-    * @returns Value between 0.0 and 1.0
     */
-    //% block="2D Perlin Noise|$x $y|amplitude $amplitude|frequency $frequency|octaves $octaves|persistence $persistence|lacunarity $lacunarity"
+    //% block="2D Perlin Noise|in $x and $y|with amplitude $amplitude|frequency $frequency|octaves $octaves|persistence $persistence|lacunarity $lacunarity"
     //% weight=70
     export function fbm2d(x: number, y: number, amplitude: number, frequency: number, octaves: number, persistence: number, lacunarity: number): number {
         let value = 0;
